@@ -1,0 +1,89 @@
+/*#00628B - blue
+#E6E6DC - cream
+#81A594 - green
+
+ColorCombo188 @ colorcombos.com
+*/
+
+/* Some good design for forms:
+http://www.smashingmagazine.com/2011/06/27/useful-ideas-and-guidelines-for-good-web-form-design/
+ColorCombo188 @ colorcombos.com
+*/
+
+
+@font-face{
+	font-family: 'airstream';
+	/* Courtesy of 1001fonts.com */
+	src: url('fonts/AirstreamNF.ttf');
+}
+
+body{
+	padding: 0;
+	background-color: #E8EFF3;
+	margin: 0;
+	height: 100%;
+}
+
+#top{
+	height: 5em;
+	background-color: #638291;
+	margin-bottom: 4em;
+	
+}
+
+#index{
+	margin-left:50%;
+	color:#638291; 
+	text-align:center; 
+	font-size:5em;
+	font-family: 'airstream',sans-serif;
+}
+
+#logo{
+	padding-left:.5em; 
+	padding-top: auto;
+	padding-bottom: auto;
+	color:#E6E6DC; 
+	text-align:left; 
+	font-size:3em;
+	font-family: 'airstream',sans-serif;
+	width: 20em;
+}
+
+#navi{
+    margin-right:0;
+    width: 10em;
+}
+
+#navi ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+}
+
+#navi li{
+    display: inline;
+}
+
+#login{
+	height: 10em;
+	width: 20em;
+	/*margin: auto;*/
+	border: 1em solid black;
+	border-radius: 1em;
+	text-align: center;
+	border-color: #638291;
+	color: #E6E6DC;
+	padding-top: 4em;
+	background-color: #638291;
+	position: absolute;
+	left: 50%;
+	right: 50%;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+#bottom{
+	height: 10em;
+
+}
