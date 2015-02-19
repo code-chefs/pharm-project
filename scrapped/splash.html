@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+	<title>eScription</title>
+	<link rel="stylesheet" href="splash.css"/>
+	<script>
+		function loadXMLDoc(){
+			var xmlhttp;
+			if (window.XMLHttpRequest){
+				xmlhttp = new XMLHttpRequest();
+			}
+			else{ //for old browsers
+				xmlhttp = new ActiveXObject("Submit.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function(){
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+					document.getElementById("login").innerHTML = xmlhttp.responseText;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="top">
+		<span id="logo">ePrescription</span>
+		
+	</div>
+	<span id="welcome">Welcome!</span>
+	<div id="login">
+		<form>
+			Username: 
+			<input type="text" name="username">
+			<br>
+			Password: 
+			<input type="password" name="password">
+			<br>
+			<input type="submit" value="Login">
+			<input type="submit" value="Register">
+		</form>
+	</div>
+	<div id="bottom"></div>
+</body>
