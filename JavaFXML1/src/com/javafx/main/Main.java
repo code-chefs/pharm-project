@@ -27,6 +27,7 @@ public class Main extends Application {
       stage.show();
    }
    
+   //real loading in loginController.java
    public void loadPatientSearch() throws Exception {
       Parent root = FXMLLoader.load(getClass().getResource("patientSearch.fxml"));
       

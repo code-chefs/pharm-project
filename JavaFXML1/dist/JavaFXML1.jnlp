@@ -3,7 +3,7 @@
   <information>
     <title>JavaFXML1</title>
     <vendor>crepanich23</vendor>
-    <description>Sample JavaFX 2.0 application.</description>
+    <description>null</description>
     <offline-allowed/>
   </information>
   <resources>
@@ -11,7 +11,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="JavaFXML1.jar" size="68545" download="eager" />
+    <jar href="JavaFXML1.jar" size="68569" download="eager" />
   </resources>
 <security>
   <all-permissions/>
@@ -19,6 +19,6 @@
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="JavaFXML1" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="javafxml1.JavaFXML1"  name="JavaFXML1" />
+  <jfx:javafx-desc  width="800" height="600" main-class="com.javafx.main.Main"  name="JavaFXML1" />
   <update check="always"/>
 </jnlp>
