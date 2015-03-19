@@ -7,11 +7,11 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:controller="com.javafx.main.list.listPrescController" xmlns:fx="http://javafx.com/fxml" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.javafx.main.list.listPrescController">
    <children>
       <SplitPane dividerPositions="0.12048192771084337" orientation="VERTICAL" prefHeight="500.0" prefWidth="600.0">
         <items>
-          <AnchorPane minHeight="50.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" maxHeight="50" >
+          <AnchorPane maxHeight="50" minHeight="50.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
                   <Label alignment="CENTER" layoutX="14.0" layoutY="12.0" prefHeight="32.0" prefWidth="175.0" text="ePrescriptions" textAlignment="JUSTIFY" AnchorPane.leftAnchor="14.0">
                      <font>
@@ -76,7 +76,6 @@
                                     <Font size="17.0" />
                                  </font>
                               </Label>
-                              <ToggleButton fx:id="EditPatientToggleButton" layoutX="158.0" layoutY="395.0" mnemonicParsing="false" text="Edit Patient" />
                               <Button fx:id="ContinueButton" layoutX="264.0" layoutY="395.0" mnemonicParsing="false" onAction="#handleContinueButton" text="Continue" />
                            </children>
                         </AnchorPane>

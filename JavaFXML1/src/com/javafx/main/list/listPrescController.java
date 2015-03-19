@@ -41,26 +41,25 @@ import javafx.util.Callback;
  */
 public class listPrescController implements Initializable{
     public static int selectedRow;
-   @FXML private TextArea FirstLastTextField;
-   @FXML private TextArea IDNumTextField;
-   @FXML private TextArea LastVisitTextField;
-   @FXML private TextArea MedicalHistoryTextArea;
-   @FXML private TextArea AllergiesTextArea;
-   @FXML private TextArea DOBTextField;
-   @FXML private TextArea EmailTextField;
-   @FXML private TextArea PhoneNumberTextField;
+   @FXML private TextArea DateOrderTextArea;
+   @FXML private TextArea MedIDTextArea;
+   @FXML private TextArea DocNameTextArea;
+   @FXML private TextArea DocContactTextArea;
+   @FXML private TextArea PatNameTextArea;
+   @FXML private TextArea PatContactTextArea;
+   @FXML private TextArea PillTextArea;
    
    @FXML private TableView PatientTableView;
    @FXML private TableColumn NameColumn;
    @FXML private TableColumn IDColumn;
    //TODO change this for prescriptions instead of patient info
    //read-only
-   private final ObservableList<Patient> data =
+   private final ObservableList<PrescOrder> data =
         FXCollections.observableArrayList(
-            new Patient("Bob", "Smith", "bobsmith@example.com","February 3, 2015",
-    "Hip Replacement (May 2014)", "Nuts", "3/4/1972","562-555-2343","342-23-1343"),
-            new Patient("Jane", "Doe", "janedoe@example.com","May 2, 2014",
-    "Healthy", "None", "10/15/1962","562-555-1988","676-92-7236")
+            new PrescOrder("February 3, 2015","XXX-XXXY","Bob","342-23-1343",
+                    "Smith, Bob", "bobsmith@example.com","Valium"),
+            new PrescOrder("May 2, 2014","XXX-XXXX","Alyssa","676-92-7236",
+                    "Doe, Jane", "janedoe@example.com","Ambien")
         ); 
    
   @Override
@@ -70,17 +69,17 @@ public class listPrescController implements Initializable{
       // TODO
      TableColumn firstNameCol = new TableColumn("First Name");
         firstNameCol.setCellValueFactory(new 
-         PropertyValueFactory<Patient,String>("firstName"));
+         PropertyValueFactory<PrescOrder,String>("firstName"));
 
         TableColumn lastNameCol = new TableColumn("Last Name");
         lastNameCol.setCellValueFactory(
-            new PropertyValueFactory<Patient,String>("lastName")
+            new PropertyValueFactory<PrescOrder,String>("lastName")
         );
         
         TableColumn idCol = new TableColumn("Medical Number");
         idCol.setMinWidth(150);
         idCol.setCellValueFactory(
-            new PropertyValueFactory<Patient,String>("IDnum")
+            new PropertyValueFactory<PrescOrder,String>("IDnum")
         );
 
          PatientTableView.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -102,41 +101,45 @@ public class listPrescController implements Initializable{
      PatientTableView.setItems(data);  
      PatientTableView.getColumns().addAll(firstNameCol, lastNameCol, idCol);
      //Patient Info
-     Patient first = data.get(0);
-     FirstLastTextField.setText(first.getFirstName() + " " + first.getLastName());
-     FirstLastTextField.setEditable(false);
-     IDNumTextField.setText(first.getIDnum());
-     IDNumTextField.setEditable(false);
-     LastVisitTextField.setText(first.getLastVisit());
-     LastVisitTextField.setEditable(false);
-     MedicalHistoryTextArea.setText(first.getHistory());
-     MedicalHistoryTextArea.setEditable(false);
-     AllergiesTextArea.setText(first.getAllergies());
-     AllergiesTextArea.setEditable(false);
-     DOBTextField.setText(first.getDOB());
-     DOBTextField.setEditable(false);
-     EmailTextField.setText(first.getEmail());
-     EmailTextField.setEditable(false);
-     PhoneNumberTextField.setText(first.getPhoneNumber());
-     PhoneNumberTextField.setEditable(false);
+     PrescOrder first = data.get(0);
+     DateOrderTextArea.setText(first.getDate());
+     DateOrderTextArea.setEditable(false);
+     MedIDTextArea.setText(first.getMedNum());
+     MedIDTextArea.setEditable(false);
+     DocNameTextArea.setText(first.getDoctor());
+     DocNameTextArea.setEditable(false);
+     DocContactTextArea.setText(first.getDoctorContact());
+     DocContactTextArea.setEditable(false);
+     PatNameTextArea.setText(first.getPatName());
+     PatNameTextArea.setEditable(false);
+     PatContactTextArea.setText(first.getPatContact());
+     PatContactTextArea.setEditable(false);
+     PillTextArea.setText(first.getPill());
+     PillTextArea.setEditable(false);
   } 
-   
+  
   public void updatePatientInfo(int index){
-     Patient first = (Patient)PatientTableView.getItems().get(index);
-     FirstLastTextField.setText(first.getFirstName() + " " + first.getLastName());
-     IDNumTextField.setText(first.getIDnum());
-     LastVisitTextField.setText(first.getLastVisit());
-     MedicalHistoryTextArea.setText(first.getHistory());
-     AllergiesTextArea.setText(first.getAllergies());
-     DOBTextField.setText(first.getDOB());
-     EmailTextField.setText(first.getEmail());
-     PhoneNumberTextField.setText(first.getPhoneNumber());
+     PrescOrder first = (PrescOrder)PatientTableView.getItems().get(index);
+     DateOrderTextArea.setText(first.getDate());
+     DateOrderTextArea.setEditable(false);
+     MedIDTextArea.setText(first.getMedNum());
+     MedIDTextArea.setEditable(false);
+     DocNameTextArea.setText(first.getDoctor());
+     DocNameTextArea.setEditable(false);
+     DocContactTextArea.setText(first.getDoctorContact());
+     DocContactTextArea.setEditable(false);
+     PatNameTextArea.setText(first.getPatName());
+     PatNameTextArea.setEditable(false);
+     PatContactTextArea.setText(first.getPatContact());
+     PatContactTextArea.setEditable(false);
+     PillTextArea.setText(first.getPill());
+     PillTextArea.setEditable(false);
   }
     @FXML protected void handleContinueButton(ActionEvent event) throws Exception{ 
        //go to prescription page
         //start new scene without closing old
         rxFillController x = new rxFillController();
-        x.patient = data.get(selectedRow);
+        x.prescOrder = data.get(selectedRow);
         x.handleContinueRx();
     }
 }

@@ -5,10 +5,11 @@
         <group>
             <file>file:/home/main/ePrescriptions/JavaFXML1/src/com/javafx/main/loginController.java</file>
             <file>file:/home/main/ePrescriptions/JavaFXML1/src/com/javafx/main/prescription/rxController.java</file>
+            <file>file:/home/main/ePrescriptions/JavaFXML1/src/com/javafx/main/fillPresc/rxFillController.java</file>
+            <file>file:/home/main/ePrescriptions/JavaFXML1/src/com/javafx/main/prescription/PrescOrder.java</file>
+            <file>file:/home/main/ePrescriptions/JavaFXML1/src/com/javafx/main/list/listPresc.fxml</file>
             <file>file:/home/main/ePrescriptions/JavaFXML1/src/com/javafx/main/Main.java</file>
             <file>file:/home/main/ePrescriptions/JavaFXML1/src/com/javafx/main/list/listPrescController.java</file>
-            <file>file:/home/main/ePrescriptions/JavaFXML1/src/com/javafx/main/patient/Patient.java</file>
-            <file>file:/home/main/ePrescriptions/JavaFXML1/src/com/javafx/main/search/searchController.java</file>
         </group>
     </open-files>
 </project-private>

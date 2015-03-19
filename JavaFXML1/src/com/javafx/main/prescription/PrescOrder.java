@@ -14,17 +14,21 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class PrescOrder {
     private final SimpleStringProperty date;
+    private final SimpleStringProperty medNum;
     private final SimpleStringProperty doctor;
+    private final SimpleStringProperty doctorContact;
     private final SimpleStringProperty patName;
     private final SimpleStringProperty patContact;
     private final SimpleStringProperty pill;
     
     
     
-    public PrescOrder(String date, String doctor, String patName, String patContact,
+    public PrescOrder(String date, String medNum, String doctor, String doctorContact, String patName, String patContact,
             String pill){
         this.date = new SimpleStringProperty(date);
+        this.medNum = new SimpleStringProperty(medNum);
         this.doctor = new SimpleStringProperty(doctor);
+        this.doctorContact = new SimpleStringProperty(doctorContact);
         this.patName = new SimpleStringProperty(patName);
         this.patContact = new SimpleStringProperty(patContact);
         this.pill = new SimpleStringProperty(pill);
@@ -34,7 +38,15 @@ public class PrescOrder {
         return date.get();
     }
     
+    public String getMedNum(){
+        return medNum.get();
+    }
+    
     public String getDoctor(){
+        return doctor.get();
+    }
+    
+    public String getDoctorContact(){
         return doctor.get();
     }
     

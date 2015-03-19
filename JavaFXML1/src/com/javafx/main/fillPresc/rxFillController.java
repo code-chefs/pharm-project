@@ -4,7 +4,7 @@
  */
 package com.javafx.main.fillPresc;
 
-import com.javafx.main.patient.Patient;
+import com.javafx.main.prescription.PrescOrder;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -28,7 +28,7 @@ import javafx.stage.WindowEvent;
  */
 public class rxFillController implements Initializable{
    static int numberOfActiveWindows = 0;
-   public Patient patient;
+   public PrescOrder prescOrder;
    
    @FXML private Label patientNameLabel;
    @FXML private ChoiceBox rxType;
