@@ -42,47 +42,49 @@ import javafx.util.Callback;
 public class listPrescController implements Initializable{
     public static int selectedRow;
    @FXML private TextArea DateOrderTextArea;
-   @FXML private TextArea MedIDTextArea;
+   @FXML private TextArea MedIDTextArea; //might need connection with Patient
    @FXML private TextArea DocNameTextArea;
    @FXML private TextArea DocContactTextArea;
    @FXML private TextArea PatNameTextArea;
    @FXML private TextArea PatContactTextArea;
    @FXML private TextArea PillTextArea;
    
-   @FXML private TableView PatientTableView;
-   @FXML private TableColumn NameColumn;
-   @FXML private TableColumn IDColumn;
+   @FXML private TableView OrderTableView;
+   @FXML private TableColumn dateCol;
+   @FXML private TableColumn docNameCol;
+   @FXML private TableColumn patNameCol;
    //TODO change this for prescriptions instead of patient info
    //read-only
    private final ObservableList<PrescOrder> data =
         FXCollections.observableArrayList(
-            new PrescOrder("February 3, 2015","XXX-XXXY","Bob","342-23-1343",
+            new PrescOrder("February 3, 2015","342-23-1343","Bob","bobdoc@example.com",
                     "Smith, Bob", "bobsmith@example.com","Valium"),
-            new PrescOrder("May 2, 2014","XXX-XXXX","Alyssa","676-92-7236",
+            new PrescOrder("May 2, 2014","676-92-7236","Alyssa","alyssa@example.com",
                     "Doe, Jane", "janedoe@example.com","Ambien")
         ); 
    
   @Override
    public void initialize(URL url, ResourceBundle rb) {
-     PatientTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+     OrderTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
      selectedRow = 0;
       // TODO
-     TableColumn firstNameCol = new TableColumn("First Name");
-        firstNameCol.setCellValueFactory(new 
-         PropertyValueFactory<PrescOrder,String>("firstName"));
-
-        TableColumn lastNameCol = new TableColumn("Last Name");
-        lastNameCol.setCellValueFactory(
-            new PropertyValueFactory<PrescOrder,String>("lastName")
+     TableColumn dateCol = new TableColumn("Date");
+        dateCol.setCellValueFactory(new 
+         PropertyValueFactory<PrescOrder,String>("date"));
+        
+        TableColumn docNameCol = new TableColumn("Doctor");
+        //docNameCol.setMinWidth(150);
+        docNameCol.setCellValueFactory(
+            new PropertyValueFactory<PrescOrder,String>("doctor")
         );
         
-        TableColumn idCol = new TableColumn("Medical Number");
-        idCol.setMinWidth(150);
-        idCol.setCellValueFactory(
-            new PropertyValueFactory<PrescOrder,String>("IDnum")
+        TableColumn patNameCol = new TableColumn("Patient");
+        patNameCol.setMinWidth(150);
+        patNameCol.setCellValueFactory(
+            new PropertyValueFactory<PrescOrder,String>("patName")
         );
 
-         PatientTableView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+         OrderTableView.setOnMouseClicked(new EventHandler<MouseEvent>() {
     @Override 
     public void handle(MouseEvent event) {
             Node node = ((Node) event.getTarget()).getParent();
@@ -98,8 +100,8 @@ public class listPrescController implements Initializable{
     }
 });
         /////
-     PatientTableView.setItems(data);  
-     PatientTableView.getColumns().addAll(firstNameCol, lastNameCol, idCol);
+     OrderTableView.setItems(data);  
+     OrderTableView.getColumns().addAll(dateCol, docNameCol, patNameCol);
      //Patient Info
      PrescOrder first = data.get(0);
      DateOrderTextArea.setText(first.getDate());
@@ -119,7 +121,7 @@ public class listPrescController implements Initializable{
   } 
   
   public void updatePatientInfo(int index){
-     PrescOrder first = (PrescOrder)PatientTableView.getItems().get(index);
+     PrescOrder first = (PrescOrder)OrderTableView.getItems().get(index);
      DateOrderTextArea.setText(first.getDate());
      DateOrderTextArea.setEditable(false);
      MedIDTextArea.setText(first.getMedNum());

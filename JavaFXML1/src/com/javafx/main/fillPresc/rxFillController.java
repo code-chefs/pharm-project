@@ -31,19 +31,23 @@ public class rxFillController implements Initializable{
    public PrescOrder prescOrder;
    
    @FXML private Label patientNameLabel;
-   @FXML private ChoiceBox rxType;
+   //@FXML private ChoiceBox rxType;
    @FXML private Button orderRxButton;
-   @FXML private TextField dosageAmount;
-   @FXML private ChoiceBox dosageType;
-   @FXML private TextField rxQuantity;
+   //@FXML private TextField dosageAmount;
+   //@FXML private ChoiceBox dosageType;
+   //@FXML private TextField rxQuantity;
+   
+   @FXML private TextField doctorSign;
    
    @Override
    public void initialize(URL url, ResourceBundle rb) {
       patientNameLabel.setText("Smith, Bob");
-      rxType.setItems(FXCollections.observableArrayList("Ambien",
-       "Lipitor", "Valium", "Vicodin","Xanax"));
-      dosageType.setItems(FXCollections.observableArrayList("mg"));
+      /*rxType.setItems(FXCollections.observableArrayList("Ambien",
+       "Lipitor", "Valium", "Vicodin","Xanax"));*/
+      //dosageType.setItems(FXCollections.observableArrayList("mg"));
       // TODO
+       
+      doctorSign.setText("Sign here");
    }  
    
    public void handleContinueRx() throws Exception{

@@ -47,7 +47,7 @@ public class PrescOrder {
     }
     
     public String getDoctorContact(){
-        return doctor.get();
+        return doctorContact.get();
     }
     
     public String getPatName(){

@@ -7,7 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.main.list.listPrescController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.javafx.main.list.listPrescController">
    <children>
       <SplitPane dividerPositions="0.12048192771084337" orientation="VERTICAL" prefHeight="500.0" prefWidth="600.0">
         <items>
@@ -26,7 +26,7 @@
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <TableView fx:id="OrderTableView" prefHeight="434.0">
+                              <TableView fx:id="PatientTableView" prefHeight="434.0">
    
                               </TableView>
                            </children>
@@ -46,29 +46,32 @@
                                     <RowConstraints maxHeight="80.0" minHeight="9.0" prefHeight="48.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="110.0" text="Order Date:" GridPane.halignment="CENTER">
+                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="110.0" text="First, Last Name:" GridPane.halignment="CENTER">
                                        <opaqueInsets>
                                           <Insets />
                                        </opaqueInsets>
                                     </Label>
                                     <Label text="Medical Record/ID Number:" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                                    <Label text="Doctor:" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                                    <Label text="Doctor Contact:" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                                    <Label text="Patient:" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-                                    <Label text="Patient Contact:" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-                                    <Label text="Rx:" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-                                    <TextArea id="firstLastNameTextField" fx:id="DateOrderTextArea" prefHeight="26.0" prefWidth="150.0" GridPane.columnIndex="1" />
-                                    <TextArea id="IDNumTextField" fx:id="MedIDTextArea" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <TextArea id="LastVisitTextField" fx:id="DocNameTextArea" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <TextArea id="MedHistoryTextArea" fx:id="DocContactTextArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                    <TextArea id="AllergiesTextArea" fx:id="PatNameTextArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                    <TextArea id="DOBTextField" fx:id="PatContactTextArea" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                    <TextArea id="EmailTextField" fx:id="PillTextArea" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <Label text="Last Visit:" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                    <Label text="Medical Issues/History:" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                    <Label text="Allergies:" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                                    <Label text="Date of Birth:" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                    <Label text="Email:" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                                    <Label text="Phone Number:" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                                    <TextArea id="firstLastNameTextField" fx:id="FirstLastTextField" prefHeight="26.0" prefWidth="150.0" GridPane.columnIndex="1" />
+                                    <TextArea id="IDNumTextField" fx:id="IDNumTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextArea id="LastVisitTextField" fx:id="LastVisitTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextArea id="MedHistoryTextArea" fx:id="MedicalHistoryTextArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextArea id="AllergiesTextArea" fx:id="AllergiesTextArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextArea id="DOBTextField" fx:id="DOBTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <TextArea id="EmailTextField" fx:id="EmailTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <TextArea id="PhoneNumberTextField" fx:id="PhoneNumberTextField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                                  </children>
                               </GridPane>
-                              <Label alignment="TOP_CENTER" layoutX="93.0" layoutY="14.0" prefHeight="32.0" prefWidth="229.0" text="Rx Information:" textAlignment="CENTER">
+                              <Label alignment="TOP_CENTER" layoutX="93.0" layoutY="14.0" prefHeight="32.0" prefWidth="229.0" text="Patient Information:" textAlignment="CENTER">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
