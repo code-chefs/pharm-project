@@ -11,7 +11,8 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="JavaFXML1.jar" size="68545" download="eager" />
+    <jar href="JavaFXML1.jar" size="70394" download="eager" />
+    <jar href="lib/mysql-connector-java-5.1.35-bin.jar" size="1006835" download="eager" />
   </resources>
 <security>
   <all-permissions/>

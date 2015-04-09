@@ -25,6 +25,7 @@ public class Main extends Application {
       stage.setTitle("User Login");
       stage.setScene(scene);
       stage.show();
+      JDBC db = new JDBC();
    }
    
    public void loadPatientSearch() throws Exception {
