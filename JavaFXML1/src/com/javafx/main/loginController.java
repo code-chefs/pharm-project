@@ -33,7 +33,7 @@ public class loginController implements Initializable {
       String u = usernameField.getText();
       String p = passwordField.getText();
       if (p.equals("1") && u.equals("Bob")){
-         //good login   
+         //good Doctor login   
         actiontarget.setText("Logging in...");
         
         //start new scene
@@ -46,7 +46,20 @@ public class loginController implements Initializable {
         stage.setScene(scene);
         stage.show();
    
-      } else {
+      } else if(p.equals("2") && u.equals("Alyssa")){ //Pharmacist login test
+        //good Pharmacist login   
+        actiontarget.setText("Logging in...");
+        
+        //start new scene TODO
+        Parent root = FXMLLoader.load(getClass().getResource("list/listPresc.fxml"));
+        Scene scene = new Scene(root, 600, 500);
+        Node source = (Node)event.getSource(); 
+        Stage stageClose  = (Stage) source.getScene().getWindow();
+        stageClose.close();
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+      }else {
          //bad login
         actiontarget.setText("Invalid username/password");
       }

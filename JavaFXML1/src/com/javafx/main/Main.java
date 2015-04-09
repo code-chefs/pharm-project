@@ -25,9 +25,9 @@ public class Main extends Application {
       stage.setTitle("User Login");
       stage.setScene(scene);
       stage.show();
-      JDBC db = new JDBC();
    }
    
+   //real loading in loginController.java
    public void loadPatientSearch() throws Exception {
       Parent root = FXMLLoader.load(getClass().getResource("patientSearch.fxml"));
       
