@@ -4,8 +4,10 @@
  */
 package com.javafx.main;
 
+import com.javafx.main.search.searchController;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,15 +31,22 @@ public class loginController implements Initializable {
    @FXML private TextField usernameField;
    @FXML private Text actiontarget;
    
-   @FXML protected void handleLoginButtonAction(ActionEvent event) throws Exception{     
+   @FXML protected void handleLoginButtonAction(ActionEvent event) throws Exception{  
+      JDBC db = new JDBC();
       String u = usernameField.getText();
       String p = passwordField.getText();
-      if (p.equals("1") && u.equals("Bob")){
-         //good Doctor login   
+      String sql = "SELECT loginPassword FROM doctor WHERE loginID = '"+u+"';";
+      
+      List<List> results = db.querySelect(sql, 1);
+      //get item at first index(should be only item in list because ID is unique)
+      List<String> list = results.get(0);
+      String pw = list.get(0);
+      if (p.equals(pw)){
+         //good login   
         actiontarget.setText("Logging in...");
-        
+        searchController.doctorID = u;
         //start new scene
-        Parent root = FXMLLoader.load(getClass().getResource("search/patientSearch.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("search/search.fxml"));
         Scene scene = new Scene(root, 600, 500);
         Node source = (Node)event.getSource(); 
         Stage stageClose  = (Stage) source.getScene().getWindow();
@@ -46,20 +55,7 @@ public class loginController implements Initializable {
         stage.setScene(scene);
         stage.show();
    
-      } else if(p.equals("2") && u.equals("Alyssa")){ //Pharmacist login test
-        //good Pharmacist login   
-        actiontarget.setText("Logging in...");
-        
-        //start new scene TODO
-        Parent root = FXMLLoader.load(getClass().getResource("list/listPresc.fxml"));
-        Scene scene = new Scene(root, 600, 500);
-        Node source = (Node)event.getSource(); 
-        Stage stageClose  = (Stage) source.getScene().getWindow();
-        stageClose.close();
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-      }else {
+      } else {
          //bad login
         actiontarget.setText("Invalid username/password");
       }

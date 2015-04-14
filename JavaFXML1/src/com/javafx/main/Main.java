@@ -25,18 +25,9 @@ public class Main extends Application {
       stage.setTitle("User Login");
       stage.setScene(scene);
       stage.show();
+      JDBC db = new JDBC();
    }
    
-   //real loading in loginController.java
-   public void loadPatientSearch() throws Exception {
-      Parent root = FXMLLoader.load(getClass().getResource("patientSearch.fxml"));
-      
-      Scene scene = new Scene(root, 300, 275);
-      
-      stage.setTitle("User Login");
-      stage.setScene(scene);
-      stage.show();
-   }
    /**
     * The main() method is ignored in correctly deployed JavaFX application.
     * main() serves only as fallback in case the application can not be launched

@@ -13,26 +13,19 @@ import javafx.beans.property.SimpleStringProperty;
 public class Patient {
    private final SimpleStringProperty firstName;
    private final SimpleStringProperty lastName;
-   private final SimpleStringProperty email;
-   private final SimpleStringProperty lastVisit;
+   private final SimpleStringProperty doctor;
+   private final SimpleStringProperty medID;
    private final SimpleStringProperty history;
-   private final SimpleStringProperty allergies;
-   private final SimpleStringProperty dob;
-   private final SimpleStringProperty phoneNumber;
-   private final SimpleStringProperty IDnum;
+   private final SimpleStringProperty lastVisit;
    
 
-        public Patient(String fName, String lName, String email, String last, 
-         String hist, String all, String dobs , String pn, String id) {
+        public Patient(String fName, String lName, String doc, String id, String lVisit, String hist) {
+            this.lastVisit = new SimpleStringProperty(lVisit);
             this.firstName = new SimpleStringProperty(fName);
             this.lastName = new SimpleStringProperty(lName);
-            this.email = new SimpleStringProperty(email);
-            this.lastVisit = new SimpleStringProperty(last);
             this.history = new SimpleStringProperty(hist);
-            this.allergies = new SimpleStringProperty(all);
-            this.dob = new SimpleStringProperty(dobs);
-            this.phoneNumber = new SimpleStringProperty(pn);
-            this.IDnum = new SimpleStringProperty(id);
+            this.doctor = new SimpleStringProperty(doc);
+            this.medID = new SimpleStringProperty(id);
         }
 
         public String getFirstName() {
@@ -49,25 +42,25 @@ public class Patient {
             lastName.set(fName);
         }
        
-        public String getEmail() {
-            return email.get();
+        public String getMedID() {
+            return medID.get();
         }
-        public void setEmail(String fName) {
-            email.set(fName);
+           public void setMedID(String id) {
+            medID.set(id);
         }
-        
-        public String getPhoneNumber() {
-            return phoneNumber.get();
-        }
-        public void setPhoneNumber(String num) {
-            phoneNumber.set(num);
-        }
-        
+           
         public String getLastVisit() {
             return lastVisit.get();
         }
-        public void setLastVisit(String lv) {
-            lastVisit.set(lv);
+        public void setLastVisit(String lVisit) {
+            lastVisit.set(lVisit);
+        }  
+        
+        public String getDoctor() {
+            return doctor.get();
+        }
+        public void setDoctor(String doc) {
+            doctor.set(doc);
         }
         
         public String getHistory() {
@@ -75,27 +68,6 @@ public class Patient {
         }
         public void setHistory(String hist) {
             history.set(hist);
-        }
-        
-        public String getIDnum() {
-            return IDnum.get();
-        }
-        public void setIDnum(String id) {
-            IDnum.set(id);
-        }
-        
-        public String getAllergies() {
-            return allergies.get();
-        }
-        public void setAllergies(String all) {
-            allergies.set(all);
-        }
-        
-        public String getDOB() {
-            return dob.get();
-        }
-        public void setDOB(String d) {
-            dob.set(d);
         }
        
     }
