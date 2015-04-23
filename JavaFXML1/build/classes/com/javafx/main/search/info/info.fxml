@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane fx:controller="com.javafx.main.search.info.infoController" xmlns:fx="http://javafx.com/fxml" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="529.0">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="529.0">
+         <children>
+            <Label fx:id="patientLabel" layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="251.0" text="Patient: ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="doctorLabel" layoutX="279.0" layoutY="14.0" prefHeight="33.0" prefWidth="149.0" text="Doctor: " />
+            <Label layoutX="14.0" layoutY="74.0" text="ID:" />
+            <TextField fx:id="patientID" layoutX="44.0" layoutY="69.0" prefHeight="26.0" prefWidth="40.0"  text="**ID**"/>
+            <Label layoutX="15.0" layoutY="139.0" text="Last Visit:" />
+            <TextField fx:id="lastVisit" layoutX="74.0" layoutY="139.0" prefHeight="26.0" prefWidth="90.0" text="*Visit Date*" />
+            <Label layoutX="165.0" layoutY="74.0" prefHeight="16.0" prefWidth="103.0" text="Medical History:" />
+            <TextArea fx:id="medicalHistory" layoutX="165.0" layoutY="94.0" prefHeight="61.0" prefWidth="352.0" />
+            <Label layoutX="14.0" layoutY="109.0" text="Doctor ID:" />
+            <TextField fx:id="doctorID" layoutX="82.0" layoutY="109.0" prefHeight="16.0" prefWidth="40.0" text="**ID**" />
+            <Label layoutX="15.0" layoutY="169.0" text="Prescriptions:" />
+            <TableView fx:id="rxTable" layoutX="15.0" layoutY="191.0" prefHeight="126.0" prefWidth="413.0">
+              <columns>
+                 <TableColumn prefWidth="115.0" text="Rx Name">
+                  <cellValueFactory><PropertyValueFactory property="name" />
+                  </cellValueFactory>
+                  </TableColumn>
+                <TableColumn prefWidth="64.0" text="Quantity" >
+                <cellValueFactory><PropertyValueFactory property="quantity" />
+                </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="64.0" text="Order ID" >
+                <cellValueFactory><PropertyValueFactory property="orderID" />
+                  </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="85.0" text="Ordered">
+                <cellValueFactory><PropertyValueFactory property="dateOrdered" />
+                  </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="84.0" text="Filled">
+                <cellValueFactory><PropertyValueFactory property="dateFilled" />
+                  </cellValueFactory>
+                </TableColumn>
+              </columns>
+            </TableView>
+               
+            <Button fx:id="orderRxButton" onAction="#handleOrderRx"  layoutX="436.0" layoutY="291.0" prefHeight="26.0" prefWidth="87.0" mnemonicParsing="false" text="Order Rx" />
+            <Button fx:id="refreshButton" onAction="#handleRefresh" layoutX="436.0" layoutY="220.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="87.0" text="Refresh" />
+            <Button fx:id="removeButton" onAction="#handleRemoveRx" layoutX="436.0" layoutY="254.0" mnemonicParsing="false" text="Remove Rx" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

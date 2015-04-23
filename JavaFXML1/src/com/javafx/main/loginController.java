@@ -52,6 +52,7 @@ public class loginController implements Initializable {
         Stage stageClose  = (Stage) source.getScene().getWindow();
         stageClose.close();
         Stage stage = new Stage();
+        stage.setTitle("Patient Search");
         stage.setScene(scene);
         stage.show();
    

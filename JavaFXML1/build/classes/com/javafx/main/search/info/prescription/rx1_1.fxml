@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="442.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="patientLabel" layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="251.0" text="Patient: ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="doctorLabel" layoutX="279.0" layoutY="14.0" prefHeight="33.0" prefWidth="149.0" text="Doctor: " />
+      <Label layoutX="14.0" layoutY="61.0" text="Rx:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="100.0" text="Dosage:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="279.0" layoutY="100.0" text="Refills:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="150.0" layoutY="100.0" text="Quantity:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="139.0" text="Instructions:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="rxField" layoutX="49.0" layoutY="59.0" />
+      <TextField fx:id="dosageField" layoutX="79.0" layoutY="97.0" prefHeight="26.0" prefWidth="62.0" />
+      <TextArea fx:id="instructionsField" layoutX="17.0" layoutY="164.0" prefHeight="77.0" prefWidth="409.0" />
+      <TextField fx:id="quantityField" layoutX="221.0" layoutY="97.0" prefHeight="26.0" prefWidth="44.0" />
+      <TextField fx:id="refillField" layoutX="331.0" layoutY="97.0" prefHeight="26.0" prefWidth="46.0" />
+      <CheckBox fx:id="orderCheck" layoutX="17.0" layoutY="256.0" mnemonicParsing="false" text="Order verified by: " />
+      <Button fx:id="orderButton" layoutX="341.0" layoutY="261.0" mnemonicParsing="false" text="Order Rx" />
+      <Label fx:id="warningLabel" alignment="CENTER" layoutX="31.0" layoutY="287.0" prefHeight="16.0" prefWidth="301.0" text="Label" textAlignment="CENTER" textFill="RED" />
+   </children>
+</AnchorPane>

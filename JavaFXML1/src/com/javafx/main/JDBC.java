@@ -85,8 +85,14 @@ public class JDBC {
    /*
     * Method for update queries to db
     */
-   public void queryUpdate(String query){
-   
+   public void queryUpdate(String query) throws Exception{
+      //Register JDBC driver
+      Class.forName("com.mysql.jdbc.Driver");
+      //Connect and execute query
+      conn = DriverManager.getConnection(DB_URL, USER, PASS);
+      stmt = conn.createStatement();
+      stmt.execute(query);
+      System.out.println("Query Executed: "+query);
    }
    
    /*
